@@ -14,12 +14,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Support Streamlit Cloud secrets as well as .env
+# Pull Gemini key from Streamlit secrets into env
 try:
-    if not os.getenv("ANTHROPIC_API_KEY") and hasattr(st, "secrets"):
-        key = st.secrets.get("ANTHROPIC_API_KEY", "")
+    if not os.getenv("GEMINI_API_KEY") and hasattr(st, "secrets"):
+        key = st.secrets.get("GEMINI_API_KEY", "")
         if key:
-            os.environ["ANTHROPIC_API_KEY"] = key
+            os.environ["GEMINI_API_KEY"] = key
 except Exception:
     pass
 
@@ -90,21 +90,16 @@ with st.sidebar:
     st.divider()
 
     # API key input
-    api_key = os.getenv("ANTHROPIC_API_KEY", "")
+    api_key = os.getenv("GEMINI_API_KEY", "")
     if not api_key:
         api_key = st.text_input(
-            "Anthropic API Key",
+            "Gemini API Key",
             type="password",
-            placeholder="sk-ant-...",
-            help="Get your key at console.anthropic.com",
+            placeholder="AIza...",
+            help="Get your free key at aistudio.google.com",
         )
         if api_key:
-            os.environ["ANTHROPIC_API_KEY"] = api_key
-            # Reinitialize client with new key
-            import anthropic
-            from core import generator
-            generator.client = anthropic.Anthropic(api_key=api_key)
-
+            os.environ["GEMINI_API_KEY"] = api_key
     st.divider()
 
     # Upload section

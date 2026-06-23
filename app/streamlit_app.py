@@ -138,11 +138,28 @@ with st.sidebar:
 
     st.divider()
 
+    # Gemini API key input (fallback if not in secrets)
+    if not os.getenv("GEMINI_API_KEY"):
+        api_key = st.text_input(
+            "Gemini API Key",
+            type="password",
+            placeholder="AIza...",
+            help="Free key at aistudio.google.com",
+        )
+        if api_key:
+            os.environ["GEMINI_API_KEY"] = api_key
+            st.success("✅ Key saved!")
+    else:
+        st.success("✅ Gemini API key loaded")
+
+    st.divider()
+
     # Demo mode
     st.markdown("### Or try demo mode")
     st.caption("Loads 3 built-in sample documents about ML, RAG, and climate.")
 
-    sample_dir = Path(__file__).parent.parent / "data" / "sample_docs"
+    # Use absolute path relative to this file so it works on Streamlit Cloud
+    sample_dir = Path(__file__).resolve().parent.parent / "data" / "sample_docs"
     sample_pdfs = list(sample_dir.glob("*.pdf"))
 
     if sample_pdfs and not st.session_state.demo_loaded:
@@ -151,8 +168,10 @@ with st.sidebar:
                 pipeline.load_documents([str(p) for p in sample_pdfs])
                 st.session_state.demo_loaded = True
             st.success(f"✅ Loaded {len(sample_pdfs)} sample document(s)")
-    elif not sample_pdfs:
-        st.info("No sample PDFs found in data/sample_docs/. Upload your own PDFs above.")
+    elif st.session_state.demo_loaded:
+        st.success("✅ Sample docs loaded")
+    else:
+        st.warning("Sample docs not found — upload your own PDFs above.")
 
     st.divider()
 

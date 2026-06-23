@@ -1,5 +1,5 @@
 streamlit
-anthropic
+google-generativeai
 langchain
 langchain-community
 langchain-text-splitters
@@ -9,4 +9,4 @@ pymupdf
 rank-bm25
 numpy
 python-dotenv
-google-generativeai
+plotly

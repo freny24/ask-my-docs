@@ -237,8 +237,8 @@ with tab_chat:
 
             # Chat input
             if prompt := st.chat_input("Ask a question about your documents..."):
-                if not os.getenv("ANTHROPIC_API_KEY"):
-                    st.error("Please enter your Anthropic API key in the sidebar.")
+                if not os.getenv("GEMINI_API_KEY"):
+                    st.error("Please enter your Gemini API key in the sidebar first.")
                 else:
                     # Show user message
                     st.session_state.messages.append({"role": "user", "content": prompt})

@@ -9,3 +9,4 @@ pymupdf
 rank-bm25
 numpy
 python-dotenv
+google-generativeai

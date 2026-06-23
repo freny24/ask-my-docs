@@ -1,0 +1,62 @@
+[
+  {
+    "question": "What are the main causes of climate change?",
+    "answer": "Greenhouse gas emissions from human activities, primarily burning fossil fuels.",
+    "source": "climate_overview.pdf",
+    "page": 2
+  },
+  {
+    "question": "How does deforestation contribute to global warming?",
+    "answer": "Trees absorb CO2; cutting them releases stored carbon and reduces absorption capacity.",
+    "source": "climate_overview.pdf",
+    "page": 4
+  },
+  {
+    "question": "What is the Paris Agreement target temperature?",
+    "answer": "Limit global warming to 1.5 degrees Celsius above pre-industrial levels.",
+    "source": "climate_overview.pdf",
+    "page": 6
+  },
+  {
+    "question": "What is retrieval-augmented generation?",
+    "answer": "A technique combining document retrieval with language model generation to ground answers in external knowledge.",
+    "source": "rag_explainer.pdf",
+    "page": 1
+  },
+  {
+    "question": "What are the main components of a RAG pipeline?",
+    "answer": "Document ingestion, chunking, embedding, vector storage, retrieval, and generation.",
+    "source": "rag_explainer.pdf",
+    "page": 3
+  },
+  {
+    "question": "How does FAISS work for similarity search?",
+    "answer": "FAISS indexes vectors and supports fast approximate nearest-neighbor search using inner product or L2 distance.",
+    "source": "rag_explainer.pdf",
+    "page": 5
+  },
+  {
+    "question": "What is the difference between dense and sparse retrieval?",
+    "answer": "Dense retrieval uses learned embeddings for semantic similarity; sparse retrieval uses keyword overlap like BM25.",
+    "source": "rag_explainer.pdf",
+    "page": 7
+  },
+  {
+    "question": "What is machine learning?",
+    "answer": "A field of AI where systems learn patterns from data without being explicitly programmed.",
+    "source": "ml_basics.pdf",
+    "page": 1
+  },
+  {
+    "question": "What is the difference between supervised and unsupervised learning?",
+    "answer": "Supervised learning uses labeled data; unsupervised learning finds patterns in unlabeled data.",
+    "source": "ml_basics.pdf",
+    "page": 3
+  },
+  {
+    "question": "What is overfitting in machine learning?",
+    "answer": "When a model learns training data too well and fails to generalize to new examples.",
+    "source": "ml_basics.pdf",
+    "page": 5
+  }
+]
